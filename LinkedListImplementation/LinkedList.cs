@@ -41,5 +41,40 @@ namespace LinkedListImplementation
             }
             Console.WriteLine();
         }
+
+        internal void InsertDataAtParticularPosition(int position, int data)
+        {
+            Node node = new Node(data);
+            if (position < 1)
+            {
+                Console.WriteLine("\nInvalid Position");
+                return;
+            }
+            if (position == 1)
+            {
+                node.next = this.head;
+                head = node;
+                Display();
+                return;
+            }
+            Node current = this.head;
+            Node prev = null;
+
+            
+            for (int i = 1; i < position; i++)
+            {
+                prev = current;
+                current = current.next;
+
+                if (current == null)
+                {
+                    break;
+                }               
+            }
+
+            node.next = current;
+            prev.next = node;
+            Display();
+        }
     }
 }

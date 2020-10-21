@@ -12,6 +12,7 @@ namespace LinkedListImplementation
             linkedList.Add(30);
             linkedList.Add(70);
             linkedList.Display();
+            linkedList.InsertDataAtParticularPosition(2, 40);
         }
     }
 }
