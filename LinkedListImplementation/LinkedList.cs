@@ -76,5 +76,12 @@ namespace LinkedListImplementation
             prev.next = node;
             Display();
         }
+
+        internal void Pop()
+        {
+            Node temp = this.head;
+            this.head = temp.next;
+            Display();
+        } 
     }
 }
