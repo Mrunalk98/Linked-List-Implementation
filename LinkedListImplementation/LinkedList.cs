@@ -109,6 +109,28 @@ namespace LinkedListImplementation
             }
             temp.next = null;
             Display();
+        }
+
+        internal void Search(int data)
+        {
+            if (this.head == null)
+            {
+                Console.WriteLine("Linked list is empty");
+                return;
+            }
+            Node temp = this.head;
+            int i = 1;
+            while(temp != null)
+            {
+                if (temp.data == data)
+                {
+                    Console.WriteLine("\n" + data + " found at position " + i);
+                    return;
+                }
+                temp = temp.next;
+                i++;
+            }
+            Console.WriteLine("\nElement not found");
 
         }
     }

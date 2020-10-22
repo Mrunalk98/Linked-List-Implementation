@@ -13,6 +13,7 @@ namespace LinkedListImplementation
             linkedList.Add(70);
             linkedList.Display();
             linkedList.InsertDataAtParticularPosition(2, 40);
+            linkedList.Search(30);
             linkedList.Pop();
             linkedList.PopLast();
         }
