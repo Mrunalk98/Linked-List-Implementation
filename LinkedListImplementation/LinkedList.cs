@@ -111,12 +111,12 @@ namespace LinkedListImplementation
             Display();
         }
 
-        internal void Search(int data)
+        internal int Search(int data)
         {
             if (this.head == null)
             {
                 Console.WriteLine("Linked list is empty");
-                return;
+                return 0;
             }
             Node temp = this.head;
             int i = 1;
@@ -125,12 +125,13 @@ namespace LinkedListImplementation
                 if (temp.data == data)
                 {
                     Console.WriteLine("\n" + data + " found at position " + i);
-                    return;
+                    return (i+1);
                 }
                 temp = temp.next;
                 i++;
             }
             Console.WriteLine("\nElement not found");
+            return 0;
 
         }
     }

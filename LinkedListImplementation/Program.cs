@@ -12,8 +12,9 @@ namespace LinkedListImplementation
             linkedList.Add(30);
             linkedList.Add(70);
             linkedList.Display();
-            linkedList.InsertDataAtParticularPosition(2, 40);
-            linkedList.Search(30);
+            int position = linkedList.Search(30);
+            if (position > 0)
+                linkedList.InsertDataAtParticularPosition(position, 40);
             linkedList.Pop();
             linkedList.PopLast();
         }
