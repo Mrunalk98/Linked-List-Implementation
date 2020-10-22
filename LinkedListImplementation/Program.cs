@@ -14,6 +14,7 @@ namespace LinkedListImplementation
             linkedList.Display();
             linkedList.InsertDataAtParticularPosition(2, 40);
             linkedList.Pop();
+            linkedList.PopLast();
         }
     }
 }

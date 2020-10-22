@@ -32,6 +32,7 @@ namespace LinkedListImplementation
             if (temp == null)
             {
                 Console.WriteLine("Linked List is empty");
+                return;
             }
             Console.WriteLine("\nData present in Linked List : ");
             while (temp != null)
@@ -79,9 +80,36 @@ namespace LinkedListImplementation
 
         internal void Pop()
         {
-            Node temp = this.head;
-            this.head = temp.next;
+            if (this.head == null)
+            {
+                Console.WriteLine("Linked list is empty");
+                return;
+            }
+            this.head = this.head.next;
             Display();
         } 
+
+        internal void PopLast()
+        {
+            if (this.head == null)
+            {
+                Console.WriteLine("Linked list is empty");
+                return;
+            }
+            if (this.head.next == null)
+            {
+                this.head = null;
+                Display();
+                return;
+            }
+            Node temp = this.head;
+            while (temp.next.next != null)
+            {
+                temp = temp.next;
+            }
+            temp.next = null;
+            Display();
+
+        }
     }
 }
