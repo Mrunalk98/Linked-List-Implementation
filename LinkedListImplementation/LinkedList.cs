@@ -45,10 +45,11 @@ namespace LinkedListImplementation
 
         internal void InsertDataAtParticularPosition(int position, int data)
         {
+            Console.WriteLine("\nAfter Inserting " + data + " at position " + position + " in Linked List");
             Node node = new Node(data);
             if (position < 1)
             {
-                Console.WriteLine("\nInvalid Position");
+                Console.WriteLine("Invalid Position");
                 return;
             }
             if (position == 1)
@@ -111,8 +112,31 @@ namespace LinkedListImplementation
             Display();
         }
 
+        internal void Remove(int data)
+        {
+            Console.WriteLine("\nAfter Removing " + data + " from Linked List");
+            if (this.head == null)
+            {
+                Console.WriteLine("Linked list is empty");
+                return;
+            }
+            Node temp = this.head;
+            while (temp.next != null)
+            {
+                if (temp.next.data == data)
+                {
+                    temp.next = temp.next.next;
+                    Display();
+                    return;
+                }
+                temp = temp.next;
+            }
+            Console.WriteLine("Element not found");
+            return;
+        }
         internal int Search(int data)
         {
+            Console.WriteLine("\nTo Search " + data + " in Linked List");
             if (this.head == null)
             {
                 Console.WriteLine("Linked list is empty");
@@ -124,15 +148,32 @@ namespace LinkedListImplementation
             {
                 if (temp.data == data)
                 {
-                    Console.WriteLine("\n" + data + " found at position " + i);
+                    Console.WriteLine(data + " found at position " + i);
                     return (i+1);
                 }
                 temp = temp.next;
                 i++;
             }
-            Console.WriteLine("\nElement not found");
+            Console.WriteLine("Element not found");
             return 0;
 
+        }
+
+        internal int Size()
+        {
+            if (this.head == null)
+            {
+                Console.WriteLine("Linked list is empty");
+                return 0;
+            }
+            Node temp = this.head;
+            int i = 0;
+            while (temp != null)
+            {
+                temp = temp.next;
+                i++;
+            }
+            return i;
         }
     }
 }

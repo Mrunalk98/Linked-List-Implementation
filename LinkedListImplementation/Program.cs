@@ -15,8 +15,9 @@ namespace LinkedListImplementation
             int position = linkedList.Search(30);
             if (position > 0)
                 linkedList.InsertDataAtParticularPosition(position, 40);
-            linkedList.Pop();
-            linkedList.PopLast();
+            linkedList.Remove(40);
+            int size = linkedList.Size();
+            Console.WriteLine("\nSize of Linked list : " + size);
         }
     }
 }
